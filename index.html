@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="head">Kanban Board</div>
+
+    <div class="board">
+      <div
+        class="column"
+        id="todo"
+        ondrop="drop(event, 'todo')"
+        ondragover="allowDrop(event)"
+      >
+        <h2>ToDo</h2>
+        <hr />
+        <div class="tasks-in-btn">
+          <input
+            type="text"
+            id="taskInput"
+            class="task-input"
+            placeholder="input task..."
+            oninput="console.log('capitalize')"
+          />
+          <button class="add-task-btn" onclick="addTask('todo')">
+            Add Task
+          </button>
+        </div>
+        <div class="task-container"></div>
+      </div>
+
+      <div
+        class="column"
+        id="in-progress"
+        ondrop="drop(event, 'in-progress')"
+        ondragover="allowDrop(event)"
+      >
+        <h2>In-Progress</h2>
+        <hr />
+        <div class="task-container"></div>
+      </div>
+
+      <div
+        class="column"
+        id="done"
+        ondrop="drop(event, 'done')"
+        ondragover="allowDrop(event)"
+      >
+        <h2>Done</h2>
+        <hr />
+        <div class="task-container"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
